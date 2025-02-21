@@ -60,6 +60,11 @@ elif [[ -d /lfs/h1 ]] ; then
   machine=wcoss2
   ${USHens_tracker}/extrkr_tcv_gfs.sh ${loopnum} ${cmodel} ${pert} ${pertdir} #2>&1 >${outfile}  
 
+elif [[ -d /gpfs/f6 ]] ; then
+  # We are on NOAA gaeac6
+  machine=gaeac6
+  ${USHens_tracker}/extrkr_tcv_gfs.sh ${loopnum} ${cmodel} ${pert} ${pertdir} #2>&1 >${outfile}
+
 else
   export machine=unknown
   echo Job failed: unknown platform 1>&2
@@ -114,6 +119,11 @@ elif [[ -d /lfs/h1 ]] ; then
   # We are on NOAA wcoss2
   machine=wcoss2
   ${USHens_tracker}/extrkr_gen_gfs.sh ${loopnum} ${cmodel} ${pert} ${pertdir} #2>&1 >${outfile}  
+
+elif [[ -d /gpfs/f6 ]] ; then
+  # We are on NOAA gaeac6
+  machine=gaeac6
+  ${USHens_tracker}/extrkr_gen_gfs.sh ${loopnum} ${cmodel} ${pert} ${pertdir} #2>&1 >${outfile}
 
 else
   export machine=unknown

@@ -1,0 +1,47 @@
+#!/bin/bash
+#PBS -N gfs_tc_genesis_avno_00
+#PBS -j oe
+#PBS -A ENSTRACK-DEV
+#PBS -q dev_transfer
+#PBS -S /bin/bash
+#PBS -l place=vscatter,select=3:ncpus=11:mpiprocs=11:mem=100GB
+#PBS -l walltime=00:30:00
+#PBS -l debug=true
+
+set -x
+
+export clustername=wcoss2
+export model=ens_tracker
+export cyc=00
+export envir=dev
+export job=gfs_avno_${cyc}
+export PACKAGEROOT=/lfs/h2/emc/ens/noscrub/hananeh.jafary
+export COMROOT=/lfs/h2/emc/ptmp/hananeh.jafary/$envir/com
+export DATAROOT=/lfs/h2/emc/ptmp/hananeh.jafary
+
+module reset
+module use ../../modulefiles
+module load ${clustername}.lua
+module list
+export KEEPDATA=YES
+
+# versions file for tracker $tracker.ver
+VERSION_FILE=${PACKAGEROOT}/tracker_version/version.ver
+if [ -f $VERSION_FILE ]; then
+  . $VERSION_FILE
+else
+  ecflow_client --abort
+  exit
+fi
+# CALL executable job script here
+${PACKAGEROOT}/TC_tracker.${TC_tracker_ver}/jobs/JGFS_TC_GENESIS
+
+#%include <tail.h>
+#%manual
+
+######################################################################
+##PURPOSE:  Executes the job that creates GFS TC genesis forecasts
+#######################################################################
+%end
+
+

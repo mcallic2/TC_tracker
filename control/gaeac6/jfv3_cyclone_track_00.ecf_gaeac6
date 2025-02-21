@@ -1,37 +1,30 @@
-#!/bin/ksh --login
+#!/bin/bash --login
 
-#SBATCH --job-name=gfs_tc_genesis
-#SBATCH --account=hwrfv3
+#SBATCH --job-name=gfs_tc_track
+#SBATCH --account=drsa-hurr1
 ##SBATCH --qos=debug
-#SBATCH --partition=orion
+#SBATCH --partition=cron_c6
 ##SBATCH --ntasks=1
-#SBATCH --nodes=1-1
+#SBATCH --nodes=1
 #SBATCH --tasks-per-node=1
 #SBATCH --cpus-per-task=1
-#SBATCH --time=00:30:00
+#SBATCH --time=00:45:00
 #SBATCH --mem=10g
-#SBATCH -o gfs_tc_genesis.log
+#SBATCH -o gfs_tc_track.log
 
-##%include <head.h>
-##%include <envir-p2.h>
-
-clustername=orion
-source /apps/other/lmod/lmod/init/sh
-module purge
+module reset
+export target=gaeac6
 module use ../../modulefiles
-module load ${clustername}.lua
+module load ${target}.lua
 module list
-
-
-ulimit -s unlimited
 
 set -x
 export envir=dev
 export cyc=00
 export job=gfs_genesis_${cyc}
 
-export PACKAGEROOT=/work2/noaa/hurricane/noscrub/hjafary
-export DATAROOT=/work2/noaa/hurricane/noscrub/hjafary/Input
+export PACKAGEROOT=/gpfs/f6/drsa-hurr1/world-shared/noscrub/Hananeh.Jafary/
+export DATAROOT=/gpfs/f6/drsa-hurr1/world-shared/noscrub/Hananeh.Jafary
 export COMROOT=${DATAROOT}/com
 export KEEPDATA=YES
 

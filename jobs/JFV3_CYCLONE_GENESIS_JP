@@ -13,12 +13,6 @@ cd $DATA
 export cycle=t${cyc}z
 
 ####################################
-# File To Log Msgs
-####################################
-#export jlogfile=${jlogfile:-${COMROOT}/logs/jlogfiles/jlogfile.${jobid}}
-export jlogfile=${jlogfile:-${DATA}/jlogfile.${jobid}}
-
-####################################
 # Specify NET and RUN Name and model
 ####################################
 export NET=${NET:-ens_tracker}
@@ -42,7 +36,7 @@ export SENDDBN=${SENDDBN:-NO}
 ####################################
 # Specify Execution Areas
 ####################################
-export HOMEens_tracker=${HOMEens_tracker:-${NWROOT:?}/ens_tracker.${ens_tracker_ver}}
+export HOMEens_tracker=${HOMEens_tracker:-${PACKAGEROOT:?}/ens_tracker.${ens_tracker_ver}}
 export EXECens_tracker=${EXECens_tracker:-$HOMEens_tracker/exec}
 export FIXens_tracker=${FIXens_tracker:-$HOMEens_tracker/fix}
 export USHens_tracker=${USHens_tracker:-$HOMEens_tracker/ush}
@@ -51,42 +45,36 @@ export SCRIPTens_tracker=${SCRIPTens_tracker:-$HOMEens_tracker/scripts}
 ##############################
 # Run setpdy and initialize PDY variables
 ##############################
-#setpdy.sh
-#. PDY
-export PDY=20230413
-
+setpdy.sh
+. PDY
 ##############################################
 # Define COM directories
 ##############################################
 
 if [[ -d /scratch2 ]] ; then
   # We are on NOAA Hera
-#  export COMINgfs=${COMINgfs:-${COMROOTp1}/gfs/prod/gfs.${PDY}}
-#  export COMINsyn=${COMINsyn:-${COMROOTp1}/arch/prod/syndat}
-#  export COMINsyn=/scratch1/NCEPDEV/hwrf/noscrub/input/SYNDAT
-  export COMINsyn=/scratch2/NCEPDEV/ensemble/Jiayi.Peng/noscrub/MetTCData/TCvital
-  export COMINgfs=/scratch2/NCEPDEV/ensemble/Jiayi.Peng/noscrub/ptmp/gfs.${PDY}
+  export COMINsyn=${COMINsyn:-/scratch2/NCEPDEV/ovp/Hana.Jafary/Input/TCvital}
+  export COMINgfs=${COMINgfs:-/scratch2/NCEPDEV/ovp/Hana.Jafary/Input/gfs.${PDY}}
 
-elif [[ -d /work ]] ; then
+elif [[ -d /work2/noaa ]] ; then
   # We are on MSU Orion
-#  export COMINgfs=${COMINgfs:-${COMROOTp1}/gfs/prod/gfs.${PDY}}
-#  export COMINgfs=/work/noaa/stmp/Jiayi.Peng/data_4_gfs
-#  export COMINsyn=${COMINsyn:-${COMROOTp1}/arch/prod/syndat}
-#  export COMINsyn=/work/noaa/global/kfriedma/glopara/git/tracker/syndat
-  export COMINsyn=/work/noaa/global/Jiayi.Peng/syndat
-  export COMINgfs=/work/noaa/global/Jiayi.Peng/ptmp/gfs.${PDY}
+  export COMINsyn=${COMINsyn:-/work2/noaa/hurricane/noscrub/hjafary/Input/TCvital}
+  export COMINgfs=${COMINgfs:-/work2/noaa/hurricane/noscrub/hjafary/Input/gfs.${PDY}}
 
-elif [[ -d /lfs4/HFIP ]] ; then
+elif [[ -d /lfs5/HFIP ]] ; then
   # We are on NOAA Jet
-  export COMINsyn=${COMINsyn:-/mnt/lfs4/HFIP/hwrf-data/hwrf-input/SYNDAT}
-  export COMINgfs=${COMINgfs:-/mnt/lfs4/HFIP/hwrfv3/Jiayi.Peng/data/gfs.20230222}
+  export COMINsyn=${COMINsyn:-/mnt/lfs5/HFIP/hwrfv3/Hananeh.Jafary/TCvital}
+  export COMINgfs=${COMINgfs:-/mnt/lfs5/HFIP/hwrfv3/Hananeh.Jafary/gfs_data/gfs.${PDY}}
 
 elif [[ -d /lfs/h1 ]] ; then
-  # We are on NOAA wcoss2  
-#export COMINgfs=${COMINgfs:-$(compath.py $envir/com/gfs/${gfs_ver})/gfs.${PDY}}
-#export COMINsyn=${COMINsyn:-$(compath.py $envir/com/gfs/${gfs_ver})/syndat)}
-  export COMINgfs=/lfs/h1/ops/prod/com/gfs/v16.3/gfs.$PDY
-  export COMINsyn=/lfs/h1/ops/prod/com/gfs/v16.3/syndat
+  # We are on NOAA wcoss2 
+  export COMINgfs=${COMINgfs:-$(compath.py $envir/com/gfs/${gfs_ver})/gfs.${PDY}}
+  export COMINsyn=${COMINsyn:-$(compath.py $envir/com/gfs/${gfs_ver})/syndat)}
+
+elif [[ -d /gpfs/f6 ]] ; then
+  # We are on NOAA gaeac6
+  export COMINsyn=${COMINsyn:-/gpfs/f6/drsa-hurr1/world-shared/noscrub/Hananeh.Jafary/gfs.${PDY}/TCvital}
+  export COMINgfs=${COMINgfs:-/gpfs/f6/drsa-hurr1/world-shared/noscrub/Hananeh.Jafary/gfs.${PDY}}
 
 else
   echo Job failed: unknown platform 1>&2
@@ -94,11 +82,11 @@ else
 fi
 
 export JYYYY=`echo ${PDY} | cut -c1-4`
-export COMIN=${COMIN:-${COMROOT:?}/${NET}/${ens_tracker_ver}/${RUN}.${PDY}/${cyc}/genesis}
-export COMINgenvit=${COMINgenvit:-${COMROOT:?}/${NET}/${ens_tracker_ver}/genesis_vital_${JYYYY}}
+export COMIN=${COMIN:-${COMROOT:?}/gfs.${PDY}/00/products/atmos/cyclone/genesis}
+export COMINgenvit=${COMINgenvit:-${COMROOT:?}/gfs.${PDY}/00/products/atmos/cyclone/genesis_vital/}
 
-export COMOUT=${COMOUT:-${COMROOT:?}/${NET}/${ens_tracker_ver}/${RUN}.${PDY}/${cyc}/genesis}
-export COMOUTgenvit=${COMOUTgenvit:-${COMROOT:?}/${NET}/${ens_tracker_ver}/genesis_vital_${JYYYY}}
+export COMOUT=${COMOUT:-${COMROOT:?}/gfs.${PDY}/00/products/atmos/cyclone/genesis}
+export COMOUTgenvit=${COMOUTgenvit:-${COMROOT:?}/gfs.${PDY}/00/products/atmos/cyclone/genesis_vital/}
 mkdir -m 775 -p $COMOUT $COMOUTgenvit
 
 msg="HAS BEGUN on `hostname`"
