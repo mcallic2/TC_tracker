@@ -1225,17 +1225,17 @@ then
       # Output file
       export FORT51=${TRKDATA}/${cmodel}.tave.${PDY}${cyc}.f${fhour}
 
-      ${EXECens_tracker}/tave_g2.x <${namelist}
+      ${EXECens_tracker}/gfdl_tave.x <${namelist}
       rcc=$?
 
       if [ $rcc -ne 0 ]; then
         set +x
         echo " "
-        echo "FATAL ERROR in call to tave_g2.x at fhour= $fhour"
+        echo "FATAL ERROR in call to gfdl_tave.x at fhour= $fhour"
         echo "rcc= $rcc      EXITING.... "
         echo " "
         set -x
-        err_exit "tave_g2.x- ERROR AT extrkr_gfs.sh LINE $LINENO"
+        err_exit "gfdl_tave.x- ERROR AT extrkr_gfs.sh LINE $LINENO"
       fi
 
       tavefile=${TRKDATA}/${cmodel}.tave.${PDY}${cyc}.f${fhour}
@@ -1351,17 +1351,17 @@ then
       # Output file
       export FORT51=${TRKDATA}/${cmodel}.tave.${PDY}${cyc}.f${fhour}
 
-      ${EXECens_tracker}/tave_g2.x <${namelist}
+      ${EXECens_tracker}/gfdl_tave.x <${namelist}
       rcc=$?
 
       if [ $rcc -ne 0 ]; then
         set +x
         echo " "
-        echo "FATAL ERROR in call to tave_g2.x at fhour= $fhour"
+        echo "FATAL ERROR in call to gfdl_tave.x at fhour= $fhour"
         echo "rcc= $rcc      EXITING.... "
         echo " "
         set -x
-        err_exit "tave_g2.x- ERROR AT extrkr_gfs.sh LINE $LINENO"
+        err_exit "gfdl_tave.x- ERROR AT extrkr_gfs.sh LINE $LINENO"
       fi
     
       tavefile=${TRKDATA}/${cmodel}.tave.${PDY}${cyc}.f${fhour}
@@ -1466,17 +1466,17 @@ then
       # Output file
         export FORT51=${TRKDATA}/${cmodel}_${pert}.tave.${PDY}${cyc}.f${fhour}
 
-        ${EXECens_tracker}/tave_g2.x <${namelist}
+        ${EXECens_tracker}/gfdl_tave.x <${namelist}
         rcc=$?
 
         if [ $rcc -ne 0 ]; then
           set +x
           echo " "
-          echo "FATAL ERROR in call to tave_g2.x at fhour= $fhour for $cmodel $pert "
+          echo "FATAL ERROR in call to gfdl_tave.x at fhour= $fhour for $cmodel $pert "
           echo "rcc= $rcc      EXITING.... "
           echo " "
           set -x
-          err_exit "tave_g2.x- ERROR AT extrkr_gfs.sh LINE $LINENO"          
+          err_exit "gfdl_tave.x- ERROR AT extrkr_gfs.sh LINE $LINENO"          
         fi
 
         tavefile=${TRKDATA}/${cmodel}_${pert}.tave.${PDY}${cyc}.f${fhour}
@@ -1650,17 +1650,17 @@ if [ ${model} -eq 15 ]; then
       # Output file
       export FORT51=${TRKDATA}/${cmodel}_tave.${PDY}${cyc}.f${fhour}
 
-      ${EXECens_tracker}/tave_g2.x <${namelist}
+      ${EXECens_tracker}/gfdl_tave.x <${namelist}
       rcc=$?
 
       if [ $rcc -ne 0 ]; then
         set +x
         echo " "
-        echo "FATAL ERROR in call to tave_g2.x at fhour= $fhour"
+        echo "FATAL ERROR in call to gfdl_tave.x at fhour= $fhour"
         echo "rcc= $rcc      EXITING.... "
         echo " "
         set -x
-        err_exit "tave_g2.x- ERROR AT extrkr_gfs.sh LINE $LINENO"
+        err_exit "gfdl_tave.x- ERROR AT extrkr_gfs.sh LINE $LINENO"
       fi
 
       tavefile=${TRKDATA}/${cmodel}_tave.${PDY}${cyc}.f${fhour}
@@ -1824,17 +1824,17 @@ if [ ${model} -eq 16 ]; then
 
         # Output file
         export FORT51=${TRKDATA}/${cmodel}_tave.${pert}.${PDY}${cyc}.f${fhour}
-        ${EXECens_tracker}/tave_g2.x <${namelist}
+        ${EXECens_tracker}/gfdl_tave.x <${namelist}
         rcc=$?
 
         if [ $rcc -ne 0 ]; then
           set +x
           echo " "
-          echo "FATAL ERROR in call to tave_g2.x at fhour= $fhour "
+          echo "FATAL ERROR in call to gfdl_tave.x at fhour= $fhour "
           echo "rcc= $rcc      EXITING....${cmodel}.${pert}.${PDY}${cyc} "
           echo " "
           set -x
-          err_exit "tave_g2.x- ERROR AT extrkr_gfs.sh LINE $LINENO"
+          err_exit "gfdl_tave.x- ERROR AT extrkr_gfs.sh LINE $LINENO"
         fi
 
 	tavefile=${TRKDATA}/${cmodel}_tave.${pert}.${PDY}${cyc}.f${fhour}
@@ -2007,17 +2007,17 @@ if [ ${model} -eq 22 ]; then
 
       # Output file
       export FORT51=${TRKDATA}/${cmodel}_tave.${pert}.${PDY}${cyc}.f${fhour}
-      ${EXECens_tracker}/tave_g2.x <${namelist}
+      ${EXECens_tracker}/gfdl_tave.x <${namelist}
       rcc=$?
 
       if [ $rcc -ne 0 ]; then
         set +x
         echo " "
-        echo "FATAL ERROR in call to tave_g2.x at fhour= $fhour "
+        echo "FATAL ERROR in call to gfdl_tave.x at fhour= $fhour "
         echo "rcc= $rcc      EXITING....${cmodel}.${pert}.${PDY}${cyc} "
         echo " "
         set -x
-        err_exit "tave_g2.x- ERROR AT extrkr_gfs.sh LINE $LINENO"
+        err_exit "gfdl_tave.x- ERROR AT extrkr_gfs.sh LINE $LINENO"
       fi
 
       tavefile=${TRKDATA}/${cmodel}_tave.${pert}.${PDY}${cyc}.f${fhour}
@@ -2186,17 +2186,17 @@ if [ ${model} -eq 7 ]; then
       # Output file
       export FORT51=${TRKDATA}/${cmodel}_tave.${PDY}${cyc}.f${fhour}
 
-      ${EXECens_tracker}/tave_g2.x <${namelist}
+      ${EXECens_tracker}/gfdl_tave.x <${namelist}
       rcc=$?
 
       if [ $rcc -ne 0 ]; then
         set +x
         echo " "
-        echo "FATAL ERROR in call to tave_g2.x at fhour= $fhour"
+        echo "FATAL ERROR in call to gfdl_tave.x at fhour= $fhour"
         echo "rcc= $rcc      EXITING.... "
         echo " "
         set -x
-        err_exit "tave_g2.x- ERROR AT extrkr_gfs.sh LINE $LINENO"
+        err_exit "gfdl_tave.x- ERROR AT extrkr_gfs.sh LINE $LINENO"
       fi
 
       tavefile=${TRKDATA}/${cmodel}_tave.${PDY}${cyc}.f${fhour}

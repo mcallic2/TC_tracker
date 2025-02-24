@@ -1042,17 +1042,17 @@ then
       # Output file
       export FORT51=${DATA}/${cmodel}_tave.${PDY}${cyc}.f${fhour}
 
-      ${EXECens_tracker}/tave_g1.x <${namelist}
+      ${EXECens_tracker}/gfdl_tave.x <${namelist}
       rcc=$?
 
       if [ $rcc -ne 0 ]; then
         set +x
         echo " "
-        echo "FATAL ERROR in call to tave_g1.x at fhour= $fhour"
+        echo "FATAL ERROR in call to gfdl_tave.x at fhour= $fhour"
         echo "rcc= $rcc      EXITING.... "
         echo " "
         set -x
-        err_exit "FAILED ${jobid} -tave_g1.x-  AT LINE $LINENO - ABNORMAL EXIT"
+        err_exit "FAILED ${jobid} -gfdl_tave.x-  AT LINE $LINENO - ABNORMAL EXIT"
       fi
 
       tavefile=${DATA}/${cmodel}_tave.${PDY}${cyc}.f${fhour}
@@ -1258,17 +1258,17 @@ then
       # Output file
       export FORT51=${DATA}/${cmodel}_tave.${PDY}${cyc}.f${fhour}
 
-      ${EXECens_tracker}/tave_g1.x <${namelist}
+      ${EXECens_tracker}/gfdl_tave.x <${namelist}
       rcc=$?
 
       if [ $rcc -ne 0 ]; then
         set +x
 	echo " "
-	echo "FATAL ERROR in call to tave_g1.x at fhour= $fhour"
+	echo "FATAL ERROR in call to gfdl_tave.x at fhour= $fhour"
 	echo "rcc= $rcc      EXITING.... "
 	echo " "
 	set -x
-	err_exit "FAILED ${jobid} -tave_g1.x-  AT LINE $LINENO - ABNORMAL EXIT"
+	err_exit "FAILED ${jobid} -gfdl_tave.x-  AT LINE $LINENO - ABNORMAL EXIT"
       fi
 
       tavefile=${DATA}/${cmodel}_tave.${PDY}${cyc}.f${fhour}

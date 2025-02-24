@@ -1011,17 +1011,17 @@ then
       export FORT51=${tavefile}
 #      export FORT92=${TRKDATA}/${cmodel}.tave92.${PDY}${cyc}.f${fhour}
 
-      ${EXECens_tracker}/tave_g2.x <${namelist}
+      ${EXECens_tracker}/gfdl_tave.x <${namelist}
       rcc=$?
 
       if [ $rcc -ne 0 ]; then
         set +x
         echo " "
-        echo "FATAL ERROR in call to tave_g2.x at fhour= $fhour"
+        echo "FATAL ERROR in call to gfdl_tave.x at fhour= $fhour"
         echo "rcc= $rcc      EXITING.... "
         echo " "
         set -x
-        err_exit "FAILED ${jobid} -tave_g2.x-  AT LINE $LINENO - ABNORMAL EXIT"
+        err_exit "FAILED ${jobid} -gfdl_tave.x-  AT LINE $LINENO - ABNORMAL EXIT"
       fi
 
 #      zfile=${TRKDATA}/${cmodel}.${PDY}${cyc}.z.f${fhour}
@@ -1259,17 +1259,17 @@ then
       # Output file
       export FORT51=${TRKDATA}/${cmodel}_tave.${PDY}${cyc}.f${fhour}
 
-      ${EXECens_tracker}/tave_g2.x <${namelist}
+      ${EXECens_tracker}/gfdl_tave.x <${namelist}
       rcc=$?
 
       if [ $rcc -ne 0 ]; then
         set +x
         echo " "
-        echo "FATAL ERROR in call to tave_g2.x at fhour= $fhour"
+        echo "FATAL ERROR in call to gfdl_tave.x at fhour= $fhour"
         echo "rcc= $rcc      EXITING.... "
         echo " "
         set -x
-        err_exit "FAILED ${jobid} -tave_g2.x-  AT LINE $LINENO - ABNORMAL EXIT"
+        err_exit "FAILED ${jobid} -gfdl_tave.x-  AT LINE $LINENO - ABNORMAL EXIT"
       fi
 
       cat ${zfile} ${tavefile} >>${catfile}
@@ -1504,17 +1504,17 @@ then
       # Output file
       export FORT51=${TRKDATA}/${cmodel}_tave.${PDY}${cyc}.f${fhour}
 
-      ${EXECens_tracker}/tave_g2.x <${namelist}
+      ${EXECens_tracker}/gfdl_tave.x <${namelist}
       rcc=$?
 
       if [ $rcc -ne 0 ]; then
         set +x
         echo " "
-        echo "FATAL ERROR in call to tave_g2.x at fhour= $fhour"
+        echo "FATAL ERROR in call to gfdl_tave.x at fhour= $fhour"
         echo "rcc= $rcc      EXITING.... "
         echo " "
         set -x
-        err_exit "FAILED ${jobid} -tave_g2.x-  AT LINE $LINENO - ABNORMAL EXIT"
+        err_exit "FAILED ${jobid} -gfdl_tave.x-  AT LINE $LINENO - ABNORMAL EXIT"
       fi
 
       cat ${zfile} ${tavefile} >>${catfile}
