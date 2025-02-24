@@ -2148,7 +2148,7 @@ echo "TIMING: Before call to gettrk at `date`"
 echo " "
 set -x
 
-${EXECens_tracker}/gettrk_g2 <${namelist}
+${EXECens_tracker}/gfdl_gettrk.x <${namelist}
 gettrk_rcc=$?
 if [ ${gettrk_rcc} -ne 0 ]; then
   set +x

@@ -1001,7 +1001,7 @@ export FORT64=${DATA}/trak.${atcfout}.atcfunix.${PDY}${cyc}
 msg="$pgm start for $atcfout at ${cyc}z"
 postmsg "$jlogfile" "$msg"
 
-${EXECens_tracker}/gettrk_g1 <${namelist}
+${EXECens_tracker}/gfdl_gettrk.x <${namelist}
 gettrk_rcc=$?
 
 if [ ${gettrk_rcc} -ne 0 ]; then
