@@ -11,7 +11,7 @@ set(gfdl_tracker_srcs
   cwaitfor.c
   CACHE INTERNAL "")
 
-set(exe_name gettrk.x)
+set(exe_name gfdl_gettrk.x)
 set(exec_dir ${CMAKE_SOURCE_DIR}/exec)
 
 if(NOT CMAKE_BUILD_TYPE)
