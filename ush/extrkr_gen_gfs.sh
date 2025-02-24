@@ -1278,17 +1278,17 @@ then
       # Output file
       export FORT51=${TRKDATA}/${cmodel}.${pert}.${PDY}${cyc}.z.f${fhour}
 
-      ${EXECens_tracker}/vint_g2.x <${namelist}
+      ${EXECens_tracker}/gfdl_vint.x <${namelist}
       rcc=$?
 
       if [ $rcc -ne 0 ]; then
         set +x
         echo " "
-        echo "FATAL ERROR in call to vint_g2.x for GPH at fhour= $fhour"
+        echo "FATAL ERROR in call to gfdl_vint.x for GPH at fhour= $fhour"
         echo "rcc= $rcc      EXITING.... "
         echo " "
         set -x
-        err_exit "vint_g2.x- ERROR for GPH AT extrkr_gen_gfs.sh LINE $LINENO"
+        err_exit "gfdl_vint.x- ERROR for GPH AT extrkr_gen_gfs.sh LINE $LINENO"
       fi
  
 #     ----------------------------------------------------
@@ -1312,17 +1312,17 @@ then
       # Output file
       export FORT51=${TRKDATA}/${cmodel}.${pert}.${PDY}${cyc}.t.f${fhour}
 
-      ${EXECens_tracker}/vint_g2.x <${namelist}
+      ${EXECens_tracker}/gfdl_vint.x <${namelist}
       rcc=$?
 
       if [ $rcc -ne 0 ]; then
         set +x
         echo " "
-        echo "FATAL ERROR in call to vint_g2.x for T at fhour= $fhour"
+        echo "FATAL ERROR in call to gfdl_vint.x for T at fhour= $fhour"
         echo "rcc= $rcc      EXITING.... "
         echo " "
         set -x
-        err_exit "vint_g2.x- ERROR for T AT extrkr_gen_gfs.sh LINE $LINENO"
+        err_exit "gfdl_vint.x- ERROR for T AT extrkr_gen_gfs.sh LINE $LINENO"
       fi
 
 #     ----------------------------------------------------
@@ -1818,17 +1818,17 @@ then
       # Output file
       export FORT51=${TRKDATA}/${cmodel}.${PDY}${cyc}.z.f${fhour}
 
-      ${EXECens_tracker}/vint_g2.x <${namelist}
+      ${EXECens_tracker}/gfdl_vint.x <${namelist}
       rcc=$?
 
       if [ $rcc -ne 0 ]; then
         set +x
         echo " "
-        echo "FATAL ERROR in call to vint_g2.x for GPH at fhour= $fhour"
+        echo "FATAL ERROR in call to gfdl_vint.x for GPH at fhour= $fhour"
         echo "rcc= $rcc      EXITING.... "
         echo " "
         set -x
-        err_exit "vint_g2.x- ERROR for GPH AT extrkr_gen_gfs.sh LINE $LINENO"
+        err_exit "gfdl_vint.x- ERROR for GPH AT extrkr_gen_gfs.sh LINE $LINENO"
       fi
 
 #     ----------------------------------------------------
@@ -1853,17 +1853,17 @@ then
       # Output file
       export FORT51=${TRKDATA}/${cmodel}.${PDY}${cyc}.t.f${fhour}
 
-      ${EXECens_tracker}/vint_g2.x <${namelist}
+      ${EXECens_tracker}/gfdl_vint.x <${namelist}
       rcc=$?
 
       if [ $rcc -ne 0 ]; then
         set +x
         echo " "
-        echo "FATAL ERROR in call to vint_g2.x for T at fhour= $fhour"
+        echo "FATAL ERROR in call to gfdl_vint.x for T at fhour= $fhour"
         echo "rcc= $rcc      EXITING.... "
         echo " "
         set -x
-        err_exit "vint_g2.x- ERROR for T AT extrkr_gen_gfs.sh LINE $LINENO"
+        err_exit "gfdl_vint.x- ERROR for T AT extrkr_gen_gfs.sh LINE $LINENO"
       fi
 
 #     ----------------------------------------------------
@@ -2049,17 +2049,17 @@ then
       # Output file
       export FORT51=${TRKDATA}/${cmodel}.${PDY}${cyc}.z.f${fhour}
 
-      ${EXECens_tracker}/vint_g2.x <${namelist}
+      ${EXECens_tracker}/gfdl_vint.x <${namelist}
       rcc=$?
 
       if [ $rcc -ne 0 ]; then
         set +x
         echo " "
-        echo "FATAL ERROR in call to vint_g2.x for GPH at fhour= $fhour"
+        echo "FATAL ERROR in call to gfdl_vint.x for GPH at fhour= $fhour"
         echo "rcc= $rcc      EXITING.... "
         echo " "
         set -x
-        err_exit "vint_g2.x- ERROR for GPH AT extrkr_gen_gfs.sh LINE $LINENO"
+        err_exit "gfdl_vint.x- ERROR for GPH AT extrkr_gen_gfs.sh LINE $LINENO"
       fi
 
 #     ----------------------------------------------------
@@ -2084,17 +2084,17 @@ then
       # Output file
       export FORT51=${TRKDATA}/${cmodel}.${PDY}${cyc}.t.f${fhour}
 
-      ${EXECens_tracker}/vint_g2.x <${namelist}
+      ${EXECens_tracker}/gfdl_vint.x <${namelist}
       rcc=$?
 
       if [ $rcc -ne 0 ]; then
         set +x
         echo " "
-        echo "FATAL ERROR in call to vint_g2.x for T at fhour= $fhour"
+        echo "FATAL ERROR in call to gfdl_vint.x for T at fhour= $fhour"
         echo "rcc= $rcc      EXITING.... "
         echo " "
         set -x
-        err_exit "vint_g2.x- ERROR for T AT extrkr_gen_gfs.sh LINE $LINENO"
+        err_exit "gfdl_vint.x- ERROR for T AT extrkr_gen_gfs.sh LINE $LINENO"
       fi
 
 #     ----------------------------------------------------
@@ -2311,17 +2311,17 @@ then
         # Output file
         export FORT51=${TRKDATA}/${cmodel}.${pert}.${PDY}${cyc}.z.f${fhour}
         
-        ${EXECens_tracker}/vint_g2.x <${namelist}
+        ${EXECens_tracker}/gfdl_vint.x <${namelist}
         rcc=$?
 
         if [ $rcc -ne 0 ]; then
           set +x
           echo " "
-          echo "FATAL ERROR in call to vint_g2.x for GPH at fhour= $fhour"
+          echo "FATAL ERROR in call to gfdl_vint.x for GPH at fhour= $fhour"
           echo "rcc= $rcc      EXITING.... "
           echo " "
           set -x
-          err_exit "vint_g2.x- ERROR for GPH AT extrkr_gen_gfs.sh LINE $LINENO"
+          err_exit "gfdl_vint.x- ERROR for GPH AT extrkr_gen_gfs.sh LINE $LINENO"
         fi
 
 #       ----------------------------------------------------
@@ -2346,17 +2346,17 @@ then
         # Output file
         export FORT51=${TRKDATA}/${cmodel}.${pert}.${PDY}${cyc}.t.f${fhour}
 
-        ${EXECens_tracker}/vint_g2.x <${namelist}
+        ${EXECens_tracker}/gfdl_vint.x <${namelist}
         rcc=$?
 
         if [ $rcc -ne 0 ]; then
           set +x
           echo " "
-          echo "FATAL ERROR in call to vint_g2.x for T at fhour= $fhour"
+          echo "FATAL ERROR in call to gfdl_vint.x for T at fhour= $fhour"
           echo "rcc= $rcc      EXITING.... "
           echo " "
           set -x
-          err_exit "vint_g2.x- ERROR for T AT extrkr_gen_gfs.sh LINE $LINENO"
+          err_exit "gfdl_vint.x- ERROR for T AT extrkr_gen_gfs.sh LINE $LINENO"
         fi
 
 #       ----------------------------------------------------
