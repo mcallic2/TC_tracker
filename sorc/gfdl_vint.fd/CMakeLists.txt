@@ -7,7 +7,7 @@
 set(gfdl_vint_srcs
   vint.f)
 
-set(exe_name vint.x)
+set(exe_name gfdl_vint.x)
 set(exec_dir ${CMAKE_SOURCE_DIR}/exec)
 
 if(NOT CMAKE_BUILD_TYPE)

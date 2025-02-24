@@ -9,7 +9,7 @@ set(gfdl_supvit_srcs
     supvit_modules.f
     CACHE INTERNAL "")
 
-set(exe_name supvit.x)
+set(exe_name gfdl_supvit.x)
 set(exec_dir ${CMAKE_SOURCE_DIR}/exec)
 
 if(NOT CMAKE_BUILD_TYPE)

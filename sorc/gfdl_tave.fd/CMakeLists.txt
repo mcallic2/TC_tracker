@@ -7,7 +7,7 @@
 set(gfdl_tave_srcs
     tave.f)
 
-set(exe_name tave.x)
+set(exe_name gfdl_tave.x)
 set(exec_dir ${CMAKE_SOURCE_DIR}/exec)
 
 if(NOT CMAKE_BUILD_TYPE)
