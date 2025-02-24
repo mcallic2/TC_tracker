@@ -2505,15 +2505,15 @@ echo "TIMING: Before call to gettrk at `date`"
 echo " "
 set -x
 
-${EXECens_tracker}/gettrk_gfs <${namelist}
+${EXECens_tracker}/gfdl_gettrk.x <${namelist}
 
 gettrk_rcc=$?
 if [ ${gettrk_rcc} -ne 0 ]; then
   set +x
   echo " "
-  echo "FATAL ERROR:  An error occurred while running gettrk.x, "
+  echo "FATAL ERROR:  An error occurred while running gfdl_gettrk.x, "
   echo "!!! which is the program that actually gets the track."
-  echo "!!! Return code from gettrk.x = ${gettrk_rcc}"
+  echo "!!! Return code from gfdl_gettrk.x = ${gettrk_rcc}"
   echo "!!! model= ${atcfout}, forecast initial time = ${PDY}${cyc}"
   echo " "
   set -x
