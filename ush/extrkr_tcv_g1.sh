@@ -1461,7 +1461,7 @@ set -x
 
 ulimit -c unlimited
 
-${EXECens_tracker}/gettrk_gen_g1 <${namelist}
+${EXECens_tracker}/gfdl_gettrk.x <${namelist}
 gettrk_rcc=$?
 
 set +x
@@ -1494,11 +1494,11 @@ if [ ${gettrk_rcc} -eq 0 ]; then
 else
   set +x
   echo " "
-  echo "FATAL ERROR:  An error occurred while running gettrk_gen_g1, "
+  echo "FATAL ERROR:  An error occurred while running gfdl_gettrk.x, "
   echo "!!! which is the program that actually gets the track."
-  echo "!!! Return code from gettrk_gen_g1 = ${gettrk_rcc}"
+  echo "!!! Return code from gfdl_gettrk.x = ${gettrk_rcc}"
   echo "!!! model= ${atcfout}, forecast initial time = ${PDY}${cyc}"
   echo " "
   set -x
-  err_exit "FAILED ${jobid} - ERROR RUNNING gettrk_gen_g1 IN TRACKER SCRIPT- ABNORMAL EXIT"
+  err_exit "FAILED ${jobid} - ERROR RUNNING gfdl_gettrk.x IN TRACKER SCRIPT- ABNORMAL EXIT"
 fi

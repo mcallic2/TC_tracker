@@ -2641,7 +2641,7 @@ set -x
 
 ulimit -c unlimited
 
-${EXECens_tracker}/gettrk_gen_g2 <${namelist}
+${EXECens_tracker}/gfdl_gettrk.x <${namelist}
 gettrk_rcc=$?
 
 set +x
@@ -2674,11 +2674,11 @@ if [ ${gettrk_rcc} -eq 0 ]; then
 else
   set +x
   echo " "
-  echo "FATAL ERROR:  An error occurred while running gettrk_gen_g2, "
+  echo "FATAL ERROR:  An error occurred while running gfdl_gettrk.x, "
   echo "!!! which is the program that actually gets the track."
-  echo "!!! Return code from gettrk_gen_g2 = ${gettrk_rcc}"
+  echo "!!! Return code from gfdl_gettrk.s = ${gettrk_rcc}"
   echo "!!! model= ${atcfout}, forecast initial time = ${PDY}${cyc}"
   echo " "
   set -x
-  err_exit "ERROR RUNNING gettrk_gen_g2 IN 2nd step"
+  err_exit "ERROR RUNNING gfdl_gettrk.x IN 2nd step"
 fi
