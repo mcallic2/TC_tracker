@@ -1020,17 +1020,17 @@ then
       # Output file
       export FORT51=${DATA}/${cmodel}.${PDY}${cyc}.z.f${fhour}
 
-      ${EXECens_tracker}/vint_g1.x <${namelist}
+      ${EXEC_gfdltracker}/vint.x <${namelist}
       rcc=$?
  
       if [ $rcc -ne 0 ]; then
         set +x
         echo " "
-        echo "FATAL ERROR in call to vint_g1.x for GPH at fhour= $fhour"
+        echo "FATAL ERROR in call to vint.x for GPH at fhour= $fhour"
         echo "rcc= $rcc      EXITING.... "
         echo " "
         set -x
-        err_exit "FAILED ${jobid} -vint_g1.x-  for GPH AT LINE $LINENO - ABNORMAL EXIT"
+        err_exit "FAILED ${jobid} -vint.x-  for GPH AT LINE $LINENO - ABNORMAL EXIT"
       fi
 
 #     ----------------------------------------------------
@@ -1051,17 +1051,17 @@ then
       # Output file
       export FORT51=${DATA}/${cmodel}.${PDY}${cyc}.t.f${fhour}
 
-      ${EXECens_tracker}/vint_g1.x <${namelist}
+      ${EXEC_gfdltracker}/vint.x <${namelist}
       rcc=$?
 
       if [ $rcc -ne 0 ]; then
         set +x
         echo " "
-        echo "FATAL ERROR in call to vint_g1.x for T at fhour= $fhour"
+        echo "FATAL ERROR in call to vint.x for T at fhour= $fhour"
         echo "rcc= $rcc      EXITING.... "
         echo " "
         set -x
-        err_exit "FAILED ${jobid} -vint_g1.x-  for T AT LINE $LINENO - ABNORMAL EXIT"
+        err_exit "FAILED ${jobid} -vint.x-  for T AT LINE $LINENO - ABNORMAL EXIT"
       fi
 
 #     ----------------------------------------------------
@@ -1277,17 +1277,17 @@ then
       # Output file
       export FORT51=${DATA}/ece${pert}.${PDY}${cyc}.z.f${fhour}
 
-      ${EXECens_tracker}/vint_g1.x <${namelist}
+      ${EXEC_gfdltracker}/vint.x <${namelist}
       rcc=$?
 
       if [ $rcc -ne 0 ]; then
         set +x
         echo " "
-        echo "FATAL ERROR in call to vint_g1.x for GPH at fhour= $fhour"
+        echo "FATAL ERROR in call to vint.x for GPH at fhour= $fhour"
         echo "rcc= $rcc      EXITING.... "
         echo " "
         set -x
-        err_exit "FAILED ${jobid} -vint_g1.x-  for GPH AT LINE $LINENO - ABNORMAL EXIT"
+        err_exit "FAILED ${jobid} -vint.x-  for GPH AT LINE $LINENO - ABNORMAL EXIT"
       fi
 
 #     ----------------------------------------------------
@@ -1308,17 +1308,17 @@ then
       # Output file
       export FORT51=${DATA}/ece${pert}.${PDY}${cyc}.t.f${fhour}
 
-      ${EXECens_tracker}/vint_g1.x <${namelist}
+      ${EXEC_gfdltracker}/vint.x <${namelist}
       rcc=$?
 
       if [ $rcc -ne 0 ]; then
         set +x
         echo " "
-        echo "FATAL ERROR in call to vint_g1.x for T at fhour= $fhour"
+        echo "FATAL ERROR in call to vint.x for T at fhour= $fhour"
         echo "rcc= $rcc      EXITING.... "
         echo " "
         set -x
-        err_exit "FAILED ${jobid} -vint_g1.x-  for T AT LINE $LINENO - ABNORMAL EXIT"
+        err_exit "FAILED ${jobid} -vint.x-  for T AT LINE $LINENO - ABNORMAL EXIT"
       fi
 
 #     ----------------------------------------------------
@@ -1495,17 +1495,17 @@ then
       # Output file
       export FORT51=${DATA}/${cmodel}.${PDY}${cyc}.z.f${fhour}
 
-      ${EXECens_tracker}/vint_g1.x <${namelist}
+      ${EXEC_gfdltracker}/vint.x <${namelist}
       rcc=$?
 
       if [ $rcc -ne 0 ]; then
         set +x
 	echo " "
-	echo "FATAL ERROR in call to vint_g1.x for GPH at fhour= $fhour"
+	echo "FATAL ERROR in call to vint.x for GPH at fhour= $fhour"
 	echo "rcc= $rcc      EXITING.... "
 	echo " "
 	set -x
-	err_exit "FAILED ${jobid} -vint_g1.x-  for GPH AT LINE $LINENO - ABNORMAL EXIT"
+	err_exit "FAILED ${jobid} -vint.x-  for GPH AT LINE $LINENO - ABNORMAL EXIT"
       fi
 
 #     ----------------------------------------------------
@@ -1524,17 +1524,17 @@ then
       # Output file
       export FORT51=${DATA}/${cmodel}.${PDY}${cyc}.t.f${fhour}
 
-      ${EXECens_tracker}/vint_g1.x <${namelist}
+      ${EXEC_gfdltracker}/vint.x <${namelist}
       rcc=$?
 
       if [ $rcc -ne 0 ]; then
         set +x
 	echo " "
-	echo "FATAL ERROR in call to vint_g1.x for T at fhour= $fhour"
+	echo "FATAL ERROR in call to vint.x for T at fhour= $fhour"
 	echo "rcc= $rcc      EXITING.... "
 	echo " "
 	set -x
-	err_exit "FAILED ${jobid} -vint_g1.x-  for T AT LINE $LINENO - ABNORMAL EXIT"
+	err_exit "FAILED ${jobid} -vint.x-  for T AT LINE $LINENO - ABNORMAL EXIT"
       fi
 
 #     ----------------------------------------------------

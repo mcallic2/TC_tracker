@@ -995,7 +995,7 @@ then
 #      ln -s -f ${FIXens_tracker}/gfs_hgt_levs.txt             fort.16
 #      ln -s -f ${ifile}                                       fort.31
 #      ln -s -f ${TRKDATA}/${cmodel}.${PDY}${cyc}.z.f${fhour}     fort.51
-#      ${EXECens_tracker}/vint.x <${namelist}
+#      ${EXEC_gfdltracker}/vint.x <${namelist}
 #      rcc1=$?
   
 #      gparm=11
@@ -1010,7 +1010,7 @@ then
 #      ln -s -f ${FIXens_tracker}/gfs_tmp_levs.txt             fort.16
 #      ln -s -f ${ifile}                                       fort.31 
 #      ln -s -f ${TRKDATA}/${cmodel}.${PDY}${cyc}.t.f${fhour}     fort.51
-#      ${EXECens_tracker}/vint.x <${namelist}
+#      ${EXEC_gfdltracker}/vint.x <${namelist}
 #      rcc2=$?
   
       namelist=${TRKDATA}/tave_input.${PDY}${cyc}
@@ -1032,7 +1032,7 @@ then
       # Output file
       export FORT51=${TRKDATA}/${cmodel}.tave.${PDY}${cyc}.f${fhour}
 
-      ${EXECens_tracker}/tave.x <${namelist}
+      ${EXEC_gfdltracker}/tave.x <${namelist}
       export err=$?; err_chk
 #      rcc3=$?
 
@@ -1162,7 +1162,7 @@ then
         export FORT16=${FIXens_tracker}/ens_hgt_levs.txt
         export FORT31=${ifile}
         export FORT51=${TRKDATA}/${cmodel}_${pert}.${PDY}${cyc}.z.f${fhour}
-        ${EXECens_tracker}/vint.x <${namelist}
+        ${EXEC_gfdltracker}/vint.x <${namelist}
         rcc1=$?
 
         gparm=11
@@ -1177,7 +1177,7 @@ then
         export FORT16=${FIXens_tracker}/ens_tmp_levs.txt
         export FORT31=${ifile}
         export FORT51=${TRKDATA}/${cmodel}_${pert}.${PDY}${cyc}.t.f${fhour}
-        ${EXECens_tracker}/vint.x <${namelist}
+        ${EXEC_gfdltracker}/vint.x <${namelist}
         rcc2=$?
 
         namelist=${TRKDATA}/tave_input.${PDY}${cyc}
@@ -1194,7 +1194,7 @@ then
         export FORT11=${ffile}
         export FORT31=${ifile}
         export FORT51=${TRKDATA}/${cmodel}_${pert}.tave.${PDY}${cyc}.f${fhour}
-        ${EXECens_tracker}/tave.x <${namelist}
+        ${EXEC_gfdltracker}/tave.x <${namelist}
         rcc3=$?
 
         if [ $rcc1 -eq 0 -a $rcc2 -eq 0 -a $rcc3 -eq 0 ]; then
@@ -1325,17 +1325,17 @@ if [ ${model} -eq 15 ]; then
       # Output file
       export FORT51=${TRKDATA}/${cmodel}.${PDY}${cyc}.z.f${fhour}
 
-      ${EXECens_tracker}/vint_g2.x <${namelist}
+      ${EXEC_gfdltracker}/vint.x <${namelist}
       rcc=$?
 
       if [ $rcc -ne 0 ]; then
         set +x
         echo " "
-        echo "FATAL ERROR in call to vint_g2.x for GPH at fhour= $fhour"
+        echo "FATAL ERROR in call to vint.x for GPH at fhour= $fhour"
         echo "rcc= $rcc      EXITING.... "
         echo " "
         set -x
-        err_exit "vint_g2.x- ERROR for GPH AT extrkr_g2.sh LINE $LINENO"
+        err_exit "vint.x- ERROR for GPH AT extrkr_g2.sh LINE $LINENO"
       fi
 
 #     ----------------------------------------------------
@@ -1359,17 +1359,17 @@ if [ ${model} -eq 15 ]; then
       # Output file
       export FORT51=${TRKDATA}/${cmodel}.${PDY}${cyc}.t.f${fhour}
 
-      ${EXECens_tracker}/vint_g2.x <${namelist}
+      ${EXEC_gfdltracker}/vint.x <${namelist}
       rcc=$?
 
       if [ $rcc -ne 0 ]; then
         set +x
         echo " "
-        echo "FATAL ERROR in call to vint_g2.x for T at fhour= $fhour"
+        echo "FATAL ERROR in call to vint.x for T at fhour= $fhour"
         echo "rcc= $rcc      EXITING.... "
         echo " "
         set -x
-        err_exit "vint_g2.x- ERROR for T AT extrkr_g2.sh LINE $LINENO"
+        err_exit "vint.x- ERROR for T AT extrkr_g2.sh LINE $LINENO"
       fi
 
 #     ----------------------------------------------------
@@ -1554,7 +1554,7 @@ if [ ${model} -eq 16 ]; then
 	  export FORT16=${FIXens_tracker}/${cmodel}_hgt_levs.txt
 	  export FORT31=${ifile}
 	  export FORT51=${TRKDATA}/${cmodel}.${pert}.${PDY}${cyc}.z.f${fhour}
-	  ${EXECens_tracker}/vint.x <${namelist}
+	  ${EXEC_gfdltracker}/vint.x <${namelist}
 	  rcc1=$?
 
 #     ----------------------------------------------------
@@ -1573,7 +1573,7 @@ if [ ${model} -eq 16 ]; then
 	  export FORT16=${FIXens_tracker}/${cmodel}_tmp_levs.txt
 	  export FORT31=${ifile}
 	  export FORT51=${TRKDATA}/${cmodel}.${pert}.${PDY}${cyc}.t.f${fhour}
-	  ${EXECens_tracker}/vint.x <${namelist}
+	  ${EXEC_gfdltracker}/vint.x <${namelist}
 	  rcc2=$?
 
 #     ----------------------------------------------------
@@ -1593,7 +1593,7 @@ if [ ${model} -eq 16 ]; then
 	  export FORT11=${ffile}
 	  export FORT31=${ifile}
 	  export FORT51=${TRKDATA}/${cmodel}_tave.${pert}.${PDY}${cyc}.f${fhour}
-	  ${EXECens_tracker}/tave.x <${namelist}
+	  ${EXEC_gfdltracker}/tave.x <${namelist}
 	  rcc3=$?
 
       if [ $rcc1 -eq 0 -a $rcc2 -eq 0 -a $rcc3 -eq 0 ]; then
@@ -1730,7 +1730,7 @@ then
       export FORT16=${FIXens_tracker}/fens_hgt_levs.txt
       export FORT31=${ifile}
       export FORT51=${TRKDATA}/${cmodel}.${pert}.${PDY}${cyc}.z.f${fhour}
-      ${EXECens_tracker}/vint.x <${namelist}
+      ${EXEC_gfdltracker}/vint.x <${namelist}
       rcc1=$?
 
 #     ----------------------------------------------------
@@ -1748,7 +1748,7 @@ then
       export FORT16=${FIXens_tracker}/fens_tmp_levs.txt
       export FORT31=${ifile}
       export FORT51=${TRKDATA}/${cmodel}.${pert}.${PDY}${cyc}.t.f${fhour}
-      ${EXECens_tracker}/vint.x <${namelist}
+      ${EXEC_gfdltracker}/vint.x <${namelist}
       rcc2=$?
 
 #     ----------------------------------------------------
@@ -1768,7 +1768,7 @@ then
       export FORT11=${ffile}
       export FORT31=${ifile}
       export FORT51=${TRKDATA}/${cmodel}_tave.${pert}.${PDY}${cyc}.f${fhour}
-      ${EXECens_tracker}/tave.x <${namelist}
+      ${EXEC_gfdltracker}/tave.x <${namelist}
       rcc3=$?
 
       if [ $rcc1 -eq 0 -a $rcc2 -eq 0 -a $rcc3 -eq 0 ]; then
@@ -1898,7 +1898,7 @@ then
       export FORT16=${FIXens_tracker}/ngem_hgt_levs.txt
       export FORT31=${ifile}
       export FORT51=${TRKDATA}/${cmodel}.${PDY}${cyc}.z.f${fhour}
-      ${EXECens_tracker}/vint.x <${namelist}
+      ${EXEC_gfdltracker}/vint.x <${namelist}
       rcc1=$?
 
 #     ----------------------------------------------------
@@ -1917,7 +1917,7 @@ then
       export FORT16=${FIXens_tracker}/ngem_tmp_levs.txt
       export FORT31=${ifile}
       export FORT51=${TRKDATA}/${cmodel}.${PDY}${cyc}.t.f${fhour}
-      ${EXECens_tracker}/vint.x <${namelist}
+      ${EXEC_gfdltracker}/vint.x <${namelist}
       rcc2=$?
 
 #     ----------------------------------------------------
@@ -1939,7 +1939,7 @@ then
       export FORT11=${ffile}
       export FORT31=${ifile}
       export FORT51=${TRKDATA}/${cmodel}_tave.${PDY}${cyc}.f${fhour}
-      ${EXECens_tracker}/tave.x <${namelist}
+      ${EXEC_gfdltracker}/tave.x <${namelist}
       rcc3=$?
 
       if [ $rcc1 -eq 0 -a $rcc2 -eq 0 -a $rcc3 -eq 0 ]; then

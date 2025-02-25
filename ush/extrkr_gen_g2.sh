@@ -1115,17 +1115,17 @@ then
       # Output file
       export FORT51=${TRKDATA}/${cmodel}.${pert}.${PDY}${cyc}.z.f${fhour}
 
-      ${EXECens_tracker}/vint_g2.x <${namelist}
+      ${EXEC_gfdltracker}/vint.x <${namelist}
       rcc=$?
 
       if [ $rcc -ne 0 ]; then
         set +x
         echo " "
-        echo "FATAL ERROR in call to vint_g2.x for GPH at fhour= $fhour"
+        echo "FATAL ERROR in call to vint.x for GPH at fhour= $fhour"
         echo "rcc= $rcc      EXITING.... "
         echo " "
         set -x
-        err_exit "vint_g2.x- ERROR for GPH AT extrkr_gen_g2.sh LINE $LINENO"
+        err_exit "vint.x- ERROR for GPH AT extrkr_gen_g2.sh LINE $LINENO"
       fi
  
 #     ----------------------------------------------------
@@ -1149,17 +1149,17 @@ then
       # Output file
       export FORT51=${TRKDATA}/${cmodel}.${pert}.${PDY}${cyc}.t.f${fhour}
 
-      ${EXECens_tracker}/vint_g2.x <${namelist}
+      ${EXEC_gfdltracker}/vint.x <${namelist}
       rcc=$?
 
       if [ $rcc -ne 0 ]; then
         set +x
         echo " "
-        echo "FATAL ERROR in call to vint_g2.x for T at fhour= $fhour"
+        echo "FATAL ERROR in call to vint.x for T at fhour= $fhour"
         echo "rcc= $rcc      EXITING.... "
         echo " "
         set -x
-        err_exit "vint_g2.x- ERROR for T AT extrkr_gen_g2.sh LINE $LINENO"
+        err_exit "vint.x- ERROR for T AT extrkr_gen_g2.sh LINE $LINENO"
       fi
 
 #     ----------------------------------------------------
@@ -1369,7 +1369,7 @@ then
 #      ln -s -f ${FIXens_tracker}/gfs_hgt_levs.txt             fort.16
 #      ln -s -f ${ifile}                                       fort.31
 #      ln -s -f ${TRKDATA}/${cmodel}.${PDY}${cyc}.z.f${fhour}     fort.51
-#      ${EXECens_tracker}/vint_g2.x <${namelist}
+#      ${EXEC_gfdltracker}/vint.x <${namelist}
 #      rcc=$?
 
 #      gparm=11
@@ -1384,7 +1384,7 @@ then
 #      ln -s -f ${FIXens_tracker}/gfs_tmp_levs.txt             fort.16
 #      ln -s -f ${ifile}                                       fort.31
 #      ln -s -f ${TRKDATA}/${cmodel}.${PDY}${cyc}.t.f${fhour}     fort.51
-#      ${EXECens_tracker}/vint_g2.x <${namelist}
+#      ${EXEC_gfdltracker}/vint.x <${namelist}
 #      rcc=$?
 
       gparm=11
@@ -1569,7 +1569,7 @@ then
 #      ln -s -f ${FIXens_tracker}/nce_hgt_levs.txt             fort.16
 #      ln -s -f ${ifile}                                       fort.31
 #      ln -s -f ${TRKDATA}/${cmodel}_${pert}.${PDY}${cyc}.z.f${fhour} fort.51
-#      ${EXECens_tracker}/vint_g2.x <${namelist}
+#      ${EXEC_gfdltracker}/vint.x <${namelist}
 #      rcc=$?
 
 #      gparm=11
@@ -1584,7 +1584,7 @@ then
 #      ln -s -f ${FIXens_tracker}/nce_tmp_levs.txt             fort.16
 #      ln -s -f ${ifile}                                       fort.31
 #      ln -s -f ${TRKDATA}/${cmodel}_${pert}.${PDY}${cyc}.t.f${fhour} fort.51
-#      ${EXECens_tracker}/vint_g2.x <${namelist}
+#      ${EXEC_gfdltracker}/vint.x <${namelist}
 #      rcc=$?
 
       gparm=11
@@ -1788,17 +1788,17 @@ then
       # Output file
       export FORT51=${TRKDATA}/${cmodel}.${PDY}${cyc}.z.f${fhour}
 
-      ${EXECens_tracker}/vint_g2.x <${namelist}
+      ${EXEC_gfdltracker}/vint.x <${namelist}
       rcc=$?
 
       if [ $rcc -ne 0 ]; then
         set +x
         echo " "
-        echo "FATAL ERROR in call to vint_g2.x for GPH at fhour= $fhour"
+        echo "FATAL ERROR in call to vint.x for GPH at fhour= $fhour"
         echo "rcc= $rcc      EXITING.... "
         echo " "
         set -x
-        err_exit "vint_g2.x- ERROR for GPH AT extrkr_gen_g2.sh LINE $LINENO"
+        err_exit "vint.x- ERROR for GPH AT extrkr_gen_g2.sh LINE $LINENO"
       fi
 
 #     ----------------------------------------------------
@@ -1823,17 +1823,17 @@ then
       # Output file
       export FORT51=${TRKDATA}/${cmodel}.${PDY}${cyc}.t.f${fhour}
 
-      ${EXECens_tracker}/vint_g2.x <${namelist}
+      ${EXEC_gfdltracker}/vint.x <${namelist}
       rcc=$?
 
       if [ $rcc -ne 0 ]; then
         set +x
         echo " "
-        echo "FATAL ERROR in call to vint_g2.x for T at fhour= $fhour"
+        echo "FATAL ERROR in call to vint.x for T at fhour= $fhour"
         echo "rcc= $rcc      EXITING.... "
         echo " "
         set -x
-        err_exit "vint_g2.x- ERROR for T AT extrkr_gen_g2.sh LINE $LINENO"
+        err_exit "vint.x- ERROR for T AT extrkr_gen_g2.sh LINE $LINENO"
       fi
 
 #     ----------------------------------------------------
@@ -1898,7 +1898,7 @@ then
       # Output file
       export FORT51=${TRKDATA}/${cmodel}_ushear.${PDY}${cyc}.f${fhour}
 
-      ${EXECens_tracker}/ushear_g2.x <${namelist}
+      ${EXEC_gfdltracker}/ushear_g2.x <${namelist}
       rcc=$?
 
       if [ $rcc -ne 0 ]; then
@@ -2036,17 +2036,17 @@ then
       # Output file
       export FORT51=${TRKDATA}/${cmodel}.${PDY}${cyc}.z.f${fhour}
 
-      ${EXECens_tracker}/vint_g2.x <${namelist}
+      ${EXEC_gfdltracker}/vint.x <${namelist}
       rcc=$?
 
       if [ $rcc -ne 0 ]; then
         set +x
         echo " "
-        echo "FATAL ERROR in call to vint_g2.x for GPH at fhour= $fhour"
+        echo "FATAL ERROR in call to vint.x for GPH at fhour= $fhour"
         echo "rcc= $rcc      EXITING.... "
         echo " "
         set -x
-        err_exit "vint_g2.x- ERROR for GPH AT extrkr_gen_g2.sh LINE $LINENO"
+        err_exit "vint.x- ERROR for GPH AT extrkr_gen_g2.sh LINE $LINENO"
       fi
 
 #     ----------------------------------------------------
@@ -2071,17 +2071,17 @@ then
       # Output file
       export FORT51=${TRKDATA}/${cmodel}.${PDY}${cyc}.t.f${fhour}
 
-      ${EXECens_tracker}/vint_g2.x <${namelist}
+      ${EXEC_gfdltracker}/vint.x <${namelist}
       rcc=$?
 
       if [ $rcc -ne 0 ]; then
         set +x
         echo " "
-        echo "FATAL ERROR in call to vint_g2.x for T at fhour= $fhour"
+        echo "FATAL ERROR in call to vint.x for T at fhour= $fhour"
         echo "rcc= $rcc      EXITING.... "
         echo " "
         set -x
-        err_exit "vint_g2.x- ERROR for T AT extrkr_gen_g2.sh LINE $LINENO"
+        err_exit "vint.x- ERROR for T AT extrkr_gen_g2.sh LINE $LINENO"
       fi
 
 #     ----------------------------------------------------
@@ -2320,17 +2320,17 @@ then
         # Output file
         export FORT51=${TRKDATA}/${cmodel}.${pert}.${PDY}${cyc}.z.f${fhour}
         
-        ${EXECens_tracker}/vint_g2.x <${namelist}
+        ${EXEC_gfdltracker}/vint.x <${namelist}
         rcc=$?
 
         if [ $rcc -ne 0 ]; then
           set +x
           echo " "
-          echo "FATAL ERROR in call to vint_g2.x for GPH at fhour= $fhour"
+          echo "FATAL ERROR in call to vint.x for GPH at fhour= $fhour"
           echo "rcc= $rcc      EXITING.... "
           echo " "
           set -x
-          err_exit "vint_g2.x- ERROR for GPH AT extrkr_gen_g2.sh LINE $LINENO"
+          err_exit "vint.x- ERROR for GPH AT extrkr_gen_g2.sh LINE $LINENO"
         fi
 
 #       ----------------------------------------------------
@@ -2356,17 +2356,17 @@ then
         # Output file
         export FORT51=${TRKDATA}/${cmodel}.${pert}.${PDY}${cyc}.t.f${fhour}
 
-        ${EXECens_tracker}/vint_g2.x <${namelist}
+        ${EXEC_gfdltracker}/vint.x <${namelist}
         rcc=$?
 
         if [ $rcc -ne 0 ]; then
           set +x
           echo " "
-          echo "FATAL ERROR in call to vint_g2.x for T at fhour= $fhour"
+          echo "FATAL ERROR in call to vint.x for T at fhour= $fhour"
           echo "rcc= $rcc      EXITING.... "
           echo " "
           set -x
-          err_exit "vint_g2.x- ERROR for T AT extrkr_gen_g2.sh LINE $LINENO"
+          err_exit "vint.x- ERROR for T AT extrkr_gen_g2.sh LINE $LINENO"
         fi
 
 #       ----------------------------------------------------
