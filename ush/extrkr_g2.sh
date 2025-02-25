@@ -614,7 +614,7 @@ then
   msg="$pgm start for $atcfout at ${cyc}z"
   postmsg "$jlogfile" "$msg"
 
-  ${EXECens_tracker}/supvit_g2 <${TRKDATA}/suv_input.${atcfout}.${PDY}${cyc}
+  ${EXEC_gfdltracker}/supvit.x <${TRKDATA}/suv_input.${atcfout}.${PDY}${cyc}
   suvrcc=$?
 
   if [ ${suvrcc} -eq 0 ]
@@ -630,7 +630,7 @@ then
     echo "!!! model= ${atcfout}, forecast initial time = ${PDY}${cyc}"
     echo " "
     set -x
-    err_exit "FAILED ${jobid} - ERROR RUNNING supvit_g2 IN TRACKER SCRIPT- ABNORMAL EXIT"
+    err_exit "FAILED ${jobid} - ERROR RUNNING supvit.x IN TRACKER SCRIPT- ABNORMAL EXIT"
   fi
 
 else

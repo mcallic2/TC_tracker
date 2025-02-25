@@ -909,7 +909,7 @@ then
   msg="$pgm start for $atcfout at ${cyc}z"
   postmsg "$jlogfile" "$msg"
 
-  ${EXECens_tracker}/supvit_g2 <${TRKDATA}/suv_input.${atcfout}.${PDY}${cyc}
+  ${EXEC_gfdltracker}/supvit.x <${TRKDATA}/suv_input.${atcfout}.${PDY}${cyc}
   suvrcc=$?
 
   if [ ${suvrcc} -eq 0 ]
@@ -925,7 +925,7 @@ then
     echo "!!! model= ${atcfout}, forecast initial time = ${PDY}${cyc}"
     echo " "
     set -x
-    err_exit "ERROR RUNNING supvit_g2 IN extrkr_gen_gfs LINE $LINENO"
+    err_exit "ERROR RUNNING supvit.x IN extrkr_gen_gfs LINE $LINENO"
   fi
 
 else

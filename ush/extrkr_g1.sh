@@ -525,7 +525,7 @@ export FORT51=${DATA}/vitals.upd.${atcfout}.${PDY}${cyc}
 msg="$pgm start for $atcfout at ${cyc}z"
 postmsg "$jlogfile" "$msg"
 
-${EXECens_tracker}/supvit_g1 <${DATA}/suv_input.${atcfout}.${PDY}${cyc}
+${EXEC_gfdltracker}/supvit.x <${DATA}/suv_input.${atcfout}.${PDY}${cyc}
 suvrcc=$?
 
 if [ ${suvrcc} -eq 0 ]
@@ -541,7 +541,7 @@ else
   echo "!!! model= ${atcfout}, forecast initial time = ${PDY}${cyc}"
   echo " "
   set -x
-  err_exit "FAILED ${jobid} - ERROR RUNNING supvit_g1 IN TRACKER SCRIPT- ABNORMAL EXIT"
+  err_exit "FAILED ${jobid} - ERROR RUNNING supvit.x IN TRACKER SCRIPT- ABNORMAL EXIT"
 fi
 
 #------------------------------------------------------------------#
