@@ -43,6 +43,7 @@ export SENDDBN=${SENDDBN:-YES}
 ####################################
 export HOMEens_tracker=${HOMEens_tracker:-${NWROOT:?}/ens_tracker.${ens_tracker_ver}}
 export EXECens_tracker=${EXECens_tracker:-$HOMEens_tracker/exec}
+export EXEC_gfdltracker=${EXEC_gfdltracker:-$HOMEens_tracker/sorc/gfdl_tracker.fd/code/exec}
 export FIXens_tracker=${FIXens_tracker:-$HOMEens_tracker/fix}
 export USHens_tracker=${USHens_tracker:-$HOMEens_tracker/ush}
 export SCRIPTSens_tracker=${SCRIPTSens_tracker:-$HOMEens_tracker/scripts}
