@@ -1001,7 +1001,7 @@ export FORT64=${DATA}/trak.${atcfout}.atcfunix.${PDY}${cyc}
 msg="$pgm start for $atcfout at ${cyc}z"
 postmsg "$jlogfile" "$msg"
 
-${EXECens_tracker}/gettrk_g1 <${namelist}
+${EXEC_gfdltracker}/gettrk.x <${namelist}
 gettrk_rcc=$?
 
 if [ ${gettrk_rcc} -ne 0 ]; then
@@ -1013,7 +1013,7 @@ if [ ${gettrk_rcc} -ne 0 ]; then
   echo "!!! model= ${atcfout}, forecast initial time = ${PDY}${cyc}"
   echo " "
   set -x
-  err_exit "FAILED ${jobid} - ERROR RUNNING gettrk_g1 IN TRACKER SCRIPT- ABNORMAL EXIT"
+  err_exit "FAILED ${jobid} - ERROR RUNNING gettrk.x IN TRACKER SCRIPT- ABNORMAL EXIT"
 fi
 
 set +x

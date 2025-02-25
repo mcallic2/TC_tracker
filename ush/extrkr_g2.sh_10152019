@@ -2147,7 +2147,7 @@ echo "TIMING: Before call to gettrk at `date`"
 echo " "
 set -x
 
-${EXECens_tracker}/gettrk_g2 <${namelist}
+${EXEC_gfdltracker}/gettrk.x <${namelist}
 gettrk_rcc=$?
 if [ ${gettrk_rcc} -ne 0 ]; then
   set +x
@@ -2158,7 +2158,7 @@ if [ ${gettrk_rcc} -ne 0 ]; then
   echo "!!! model= ${atcfout}, forecast initial time = ${PDY}${cyc}"
   echo " "
   set -x
-  err_exit "FAILED ${jobid} - ERROR RUNNING gettrk_g2 IN TRACKER SCRIPT- ABNORMAL EXIT"
+  err_exit "FAILED ${jobid} - ERROR RUNNING gettrk.x IN TRACKER SCRIPT- ABNORMAL EXIT"
 fi
 
 set +x
