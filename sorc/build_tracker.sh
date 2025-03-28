@@ -31,10 +31,15 @@ make -j 8 VERBOSE=2
 make install
 
 cd ..
-export home=$PWD
+export basedir=$PWD
+export sorcdir=$basedir/sorc
 
-# move into sorc/gfdl_tracker.fd directory
-export gfdl_tracker=sorc/gfdl_tracker.fd/code/
+# clone gfdl vortex tracker in sorc directory
+cd $sorcdir
+git clone https://github.com/NOAA-GFDL/GFDL-VortexTracker.git gfdl_tracker.fd
+
+# move into gfdl_tracker.fd directory
+export gfdl_tracker=gfdl_tracker.fd/code/
 cd $gfdl_tracker
 
 # build & compile gfdl-vortextracker executables
@@ -50,8 +55,8 @@ make install
 cd ..
 export gfdl_exec=exec/
 cd $gfdl_exec
-cp * $home/exec/.
+cp * $basedir/exec/.
 
 # move back into home/base directory
-cd $home
+cd $basedir
 exit
