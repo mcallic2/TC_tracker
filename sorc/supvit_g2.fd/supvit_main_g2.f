@@ -237,7 +237,7 @@ c
       return
 
   891 print *,'WARNING: Problem with syndat_tcvitals input occurred'
-      print *,'in supvit_g2 program while reading unit ',lucard
+      print *,'in supvit.x program while reading unit ',lucard
       iret = 98
 
       return
