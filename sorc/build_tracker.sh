@@ -39,8 +39,8 @@ cd $sorcdir
 git clone https://github.com/NOAA-GFDL/GFDL-VortexTracker.git gfdl_tracker.fd
 
 # move into gfdl_tracker.fd directory
-export gfdl_tracker=gfdl_tracker.fd/code/
-cd $gfdl_tracker
+export gfdl_tracker=gfdl_tracker.fd
+cd $gfdl_tracker/code
 
 # build & compile gfdl-vortextracker executables
 if [ -d "build" ]; then
@@ -56,6 +56,11 @@ cd ..
 export gfdl_exec=exec/
 cd $gfdl_exec
 cp * $basedir/exec/.
+
+# remove gfdl_tracker.fd/ dir so that build_tracker.sh
+# can be run again without breaking in user's same directory
+cd $sorcdir
+rm -rf $gfdl_tracker
 
 # move back into home/base directory
 cd $basedir
